@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thane – City of Lakes</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Dual Screen Background for Smooth Fades -->
+    <div class="bg-wrapper">
+        <div id="bgImage1" class="bg-image active"></div>
+        <div id="bgImage2" class="bg-image"></div>
+        <div class="overlay"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>Thane</h1>
+            <p>City of Lakes</p>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchLake" placeholder="Search lakes..." onkeyup="filterLakes()">
+        </div>
+        <ul id="lakeList" class="lake-list">
+            <!-- List items injected by JS -->
+        </ul>
+        <div class="sidebar-footer">
+            <p>&copy; 2026 Thane Guide</p>
+        </div>
+    </aside>
+
+    <!-- Main Content Overlay -->
+    <header class="top-header">
+        <h2 id="lakeName">Upvan Lake</h2>
+    </header>
+
+    <main class="content">
+        <div class="info-card">
+            <button class="explore-btn">Explore Details</button>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="navigation-controls">
+            <button class="nav-btn" onclick="prevLake()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 18l-6-6 6-6" />
+                </svg>
+            </button>
+            <button class="nav-btn" onclick="nextLake()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18l6-6-6-6" />
+                </svg>
+            </button>
+        </div>
+    </main>
+
+    <!-- Details Modal -->
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="collageGrid" class="collage-grid">
+                <!-- Collage images injected by JS -->
+            </div>
+            <div class="modal-info">
+                <h2 id="modalLakeName">Lake Name</h2>
+                <div class="divider"></div>
+                <p id="modalLakeDescription">Lake description will appear here.</p>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
